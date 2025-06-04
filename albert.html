@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            padding-top: 70px;
+            margin-top: 20px;
+        }
+        /* Custom styles for centering nav links */
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Adds spacing between links */
+            font-size: large;
+        }
+        .navbar-brand img {
+            height: 40px; /* Adjust logo height */
+        }
+        .newsletter-btn {
+            background-color: #e7a0a0;
+            color: #264d49;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .newsletter-btn:hover {
+            background-color: white;
+            color: rgb(180, 29, 29);
+        }
+        /* Ensures navbar items stay in one line */
+        .navbar {
+            white-space: nowrap;
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
+             background-color: #aa6262;
+        }
+
+        .nav-link{
+            color: white;
+        }
+
+        .nav-link:hover{
+            color: aqua;
+        }
+
+        .container{
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        span{
+            color:rgb(187, 9, 9);
+        }
+
+        .lead{
+            font-family:initial;
+            padding-left: 10px;
+            letter-spacing: 1px;
+        }
+
+        .lead:hover{
+            color:rgb(180, 29, 29);
+            cursor: pointer;
+        }
+        img{
+            border: 2px solid transparent;
+           
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+    
+        h3{
+            color: brown;
+        }
+
+     
+.full-width-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+        /* Side Tab Styles */
+.side-tab {
+    background-color: white;
+    height: 100vh;
+    width: 280px;
+    position: fixed;
+    left: -280px;
+    top: 56px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(214, 201, 201, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+
+.side-tab.active {
+    left: 0;
+}
+
+.side-tab-content {
+    padding: 20px;
+}
+
+.side-tab-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #9b1818;
+}
+
+.side-tab-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.side-tab-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.side-tab-list li a {
+    color: #aa0808;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.side-tab-list li a:hover {
+    color: rgb(180, 29, 29);
+}
+
+/* Overlay when side tab is open */
+.overlay {
+    position: fixed;
+    top: 56px;
+    z-index: 999;
+}
+
+/* Adjust main content when side tab is open */
+body.side-tab-open {
+    overflow: hidden;
+}
+
+#sideTabToggleBtn .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+        
+
+/* Footer Base Styles */
+.bio-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0 30px;
+    margin-top: auto;
+    position: relative;
+    font-family: 'Georgia', serif;
+    width: 100vw;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Footer Columns */
+.footer-col h4 {
+    color: #f5f5f5;
+    margin-bottom: 25px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #e74c3c;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: #e74c3c;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #bdc3c7;
+}
+
+.newsletter-form button {
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    background: #e74c3c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .back-to-top {
+        right: 20px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+        .container-box{
+            border: 2px solid gray;
+            border-radius: 90px;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Side Tab -->
+<div class="side-tab" id="sideTab">
+    <div class="side-tab-content ">
+        <h3 class="side-tab-title">BIOGRAPHY</h3>
+        <ul class="side-tab-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="history and culture.html">History and Culture</a></li>
+            <li><a href="scientists.html">Scientists</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Overlay (for closing when clicking outside) -->
+<div class="overlay" id="overlay"></div>
+
+
+     <!-- navbar -->
+    <nav class="navbar navbar-light  fixed-top">
+        <div class="container-fluid">
+
+          <!-- Toggle Button (added before the logo) -->
+<button class="navbar-toggler me-2" type="button" id="sideTabToggleBtn">
+    <span class="navbar-toggler-icon"></span>
+</button>
+            <!-- Logo-->
+            <a class="navbar-brand" href="#">
+               <img src="https://8-www.britishempire.co.uk/images3/biographytit.jpg" alt="Biography Logo" width="200px" height="100px">
+            </a>
+            </a>
+
+            <!-- nav links-->
+            <ul class="navbar-nav flex-row"> <!-- flex-row keeps items horizontal -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artists.html">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="history and culture.html">History and Culture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+            </ul>
+
+            <!-- Newsletter button -->
+            <div class="d-flex">
+                <button class="newsletter-btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                    <i class="fas fa-envelope me-2"></i> Newsletter
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Newsletter Modal (Popup) -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Subscribe to Our Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1 class="text-center text-secondary">EINSTEIN FAMILY</h1><hr>
+        <p class="text-center">The Einstein family is the family of physicist Albert Einstein (1879–1955). Einstein's great-great-great-great-grandfather, Jakob Weil, was his oldest recorded relative, born in the late 17th century, and the family continues to this day. Albert Einstein's great-great-grandfather, Löb Moses Sontheimer (1745–1831), was also the grandfather of the tenor Heinrich Sontheim (1820–1912) of Stuttgart.<br>Albert's three children were from his relationship with his first wife, Mileva Marić, his daughter Lieserl being born a year before they married. Albert Einstein's second wife was Elsa Einstein, whose mother Fanny Koch was the sister of Albert's mother, and whose father, Rudolf Einstein, was the son of Raphael Einstein, a brother of Albert's paternal grandfather. Albert and Elsa were thus first cousins through their mothers and second cousins through their fathers.</p><hr>
+        <h1 class="text-center text-secondary">EARLY LIFE</h1><hr>
+        <p> <b>Born: </b>14 March 1879
+            Ulm, Kingdom of Württemberg, German Empire</p>
+           <p> <b>Died: </b>18 April 1955 (aged 76)
+            Princeton, New Jersey, U.S.</p>
+            <p> <b>Known For: </b>	
+                General relativity,
+                Special relativity,
+                Photoelectric effect,
+                E=mc2 (mass–energy equivalence),
+                E=hf (Planck–Einstein relation),
+                Theory of Brownian motion,
+                Einstein field equations,
+                Bose–Einstein statistics,
+                Bose–Einstein condensate,
+                Gravitational wave,
+                Cosmological constant,
+                Unified field theory,
+                EPR paradox,
+                Ensemble interpretation,
+                List of other concepts.</p>
+
+                <p> <b>Education: </b>	
+                    See list
+                    Education	
+                    Swiss federal polytechnic school (teaching diploma, 1900)
+                    University of Zurich (PhD, 1905)</p>
+                    <hr>
+            <h1 class="text-center text-primary">AWARDS AND HONORS</h1>
+            <P>Einstein received numerous awards and honors, and in 1922, he was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect. None of the nominations in 1921 met the criteria set by Alfred Nobel, so the 1921 prize was carried forward and awarded to Einstein in 1922.</P>
+            <hr>
+        <div class="container my-5 ">
+            <h1 class="text-center text-danger">HIS FIRST INVENTION</h1>
+            <div class="row align-items-center">
+              <!-- Text Left -->
+              <div class="col-md-6 text-content">
+                <h2>PHOTOELECTRIC EFFECT</h2>
+                <p>Albert Einstein's first major scientific achievement, often considered his "first invention," was a theory explaining the photoelectric effect, published in 1905. This theory, which earned him the Nobel Prize in Physics in 1921, proposed that light consists of discrete packets of energy called photons, later named by Paul Dirac</p>
+              </div>
+        
+              <!-- Image Right -->
+              <div class="col-md-6 img-content text-center border border-secondary rounded-3 mt-5">
+                <img src="https://www.sciencefacts.net/wp-content/uploads/2023/09/Photoelectric-Effect.jpg" width="400px" class="rounded" alt="photoelectric effect">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="container">
+          <h1 class="text-center text-dark">ACHIEVEMENTS</h1><hr>
+          <div class="row align-items-center">
+            <div class="col-md-8 text-content">
+    <h3 class="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; mt-5">THEORY OF SPECIFIC RELATIVITY</h3><br>
+    <p> It is based on two key postulates: first, the principle of relativity, which states that the laws of physics are identical in all inertial (non-accelerating) reference frames, meaning there is no absolute state of rest; and second, the constancy of the speed of light (c), which asserts that light always travels at approximately 3 × 10⁸ m/s in a vacuum, regardless of the observer's motion. These principles lead to several groundbreaking consequences, including time dilation, where moving clocks tick slower than stationary ones; length contraction, where objects shrink in the direction of motion at high speeds; and the relativity of simultaneity, meaning events that appear simultaneous to one observer may not be to another. Additionally, Einstein’s famous equation E=mc² reveals the equivalence of mass and energy, showing that even a small amount of mass can be converted into a tremendous amount of energy. Special relativity has been confirmed by countless experiments and remains essential in modern physics, particularly in high-speed and high-energy scenarios.</p></div>
+    <div class="col-md-4 img-content text-center">
+        <img src="https://i.ytimg.com/vi/hHJWnIvlTgw/maxresdefault.jpg" alt="theory of specific relativity" width="350px" class="img-thumbnail">
+    </div>
+     <div class="col-md-8 main-content mt-5">
+    <h3 class="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">THEORY OF GENERAL RELATIVITY</h3><br>
+    <p>According to this theory, massive objects like planets and stars warp the fabric of spacetime around them, and this curvature dictates how objects move—what we perceive as gravity is actually the effect of objects following the "straightest possible paths" (geodesics) in this curved geometry. General Relativity predicts several phenomena that Newtonian gravity cannot explain, such as the bending of light around massive objects (gravitational lensing), the slowing of time in strong gravitational fields (gravitational time dilation), and the existence of black holes—regions where spacetime is so warped that not even light can escape. It also explains the precise orbit of Mercury and has been confirmed by numerous experiments, including the detection of gravitational waves in 2016. General Relativity remains the foundation of modern cosmology, shaping our understanding of the universe's structure and evolution.
+</p></div>
+    <div class="col-md-4 img-content text-center border border-info rounded-3">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Elevator_gravity.svg/1024px-Elevator_gravity.svg.png" alt="theory of general relativity" width="200px" height="100px" class="img-thumbnail">
+<p class="text-muted small">According to general relativity, objects in a gravitational field behave similarly to objects within an accelerating enclosure. For example, an observer will see a ball fall the same way in a rocket (left) as it does on Earth (right), provided that the acceleration of the rocket is equal to 9.8 m/s2 (the acceleration due to gravity on the surface of the Earth).</p></div>
+    <h3 class="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-center text-dark mt-5">CONTRIBUTION TO QUANTUM THEORY</h3><br>
+    <p>Albert Einstein made groundbreaking contributions to quantum theory, despite his later reservations about its probabilistic nature. In 1905, his explanation of the photoelectric effect—showing that light behaves as discrete packets of energy called quanta (later named photons)—laid the foundation for quantum mechanics and earned him the Nobel Prize in 1921. He further advanced quantum theory by introducing the concept of wave-particle duality, suggesting that particles like electrons could exhibit both wave-like and particle-like properties. Additionally, his work on stimulated emission (1917) became the theoretical basis for lasers. Although Einstein famously debated quantum mechanics' completeness (e.g., the EPR paradox challenging entanglement’s "spooky action at a distance"), his early insights were pivotal in shaping the field</p>
+  </div>
+</div>
+  </div>
+
+  <footer class="bio-footer">
+    <div class="footer-container">
+        <!-- Column 1: Quick Links -->
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="history.html">Historical Figures</a></li>
+                <li><a href="scientists.html">Scientists</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Resources -->
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="bibliography.html">Bibliography</a></li>
+                <li><a href="museum-partners.html">Museum Partners</a></li>
+                <li><a href="research-papers.html">Research Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> contact@biographydomain.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p class="copyright">© 2023 Biography Archives. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('sideTabToggleBtn');
+    const sideTab = document.getElementById('sideTab');
+    const overlay = document.getElementById('overlay');
+    
+    // Toggle side tab
+    toggleBtn.addEventListener('click', function() {
+        sideTab.classList.toggle('active');
+        overlay.style.display = sideTab.classList.contains('active') ? 'block' : 'none';
+        document.body.classList.toggle('side-tab-open');
+    });
+    
+    // Close side tab when clicking overlay
+    overlay.addEventListener('click', function() {
+        sideTab.classList.remove('active');
+        overlay.style.display = 'none';
+        document.body.classList.remove('side-tab-open');
+    });
+    
+    // Close side tab when clicking a link (optional)
+    const sideTabLinks = document.querySelectorAll('.side-tab-list a');
+    sideTabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            sideTab.classList.remove('active');
+            overlay.style.display = 'none';
+            document.body.classList.remove('side-tab-open');
+        });
+    });
+
+    // Newsletter form submission with alert
+    const newsletterForms = document.querySelectorAll('form'); // Get all forms on the page
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Find the email input within this form
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            if (emailInput && emailInput.value) {
+                // Show success message
+                alert('Thank you for subscribing to our newsletter!');
+                
+                // Reset the form
+                this.reset();
+                
+                // Close the modal if this is the modal form
+                if (this.closest('.modal')) {
+                    const modal = bootstrap.Modal.getInstance(this.closest('.modal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                }
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BIOGRAPHY</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .newsletter-btn {
+            background-color: #e7a0a0;
+            color: #264d49;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .newsletter-btn:hover {
+            background-color: white;
+            color: rgb(180, 29, 29);
+        }
+        .navbar {
+            background-color: #aa6262;
+            padding: 8px 0;
+        }
+        .nav-link {
+            color: white;
+        }
+        .nav-link:hover {
+            color: aqua;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(49, 32, 32, 0.7), rgba(70, 27, 22, 0.7)), 
+                        url('https://t3.ftcdn.net/jpg/02/57/40/90/360_F_257409081_IoftogTOtLKDRoeZPN6IaVxHNmkFZ3sh.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color:#e2cacf;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-decoration: underline;
+        }
+        span {
+            color: #bd1111da;
+        }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(153, 66, 66, 0.5);
+        }
+        .hero-btn {
+            background-color: #b41d1d;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            margin-bottom: 10px;
+        }
+        .hero-btn:hover {
+            background-color: #8a1717;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            position: relative;
+            text-align: center;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+            margin: 15px auto;
+        }
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .person-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .person-card:hover {
+            transform: translateY(-8px);
+        }
+        .person-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .person-info {
+            padding: 15px;
+        }
+        .person-info h3 {
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .person-info p {
+            color: #7f8c8d;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        .historic-moments {
+            padding: 50px 0;
+            background: #ecf0f1;
+        }
+        .moments-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .moment-card {
+            flex: 0 0 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .moment-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .moment-info {
+            padding: 15px;
+        }
+        .moment-info h3 {
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        .date {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .top-cricketers {
+            padding: 50px 0;
+        }
+        .cricketers-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .cricketer-card {
+            background: #fff;
+            border-radius: 8px;
+            width: 200px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .cricketer-rank {
+            background: #3498db;
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -30px auto 12px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .cricketer-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ecf0f1;
+            margin-bottom: 12px;
+        }
+        .cricketer-card h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        .cricketer-card p {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        .side-tab {
+            background-color: white;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: -250px;
+            top: 56px;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(214, 201, 201, 0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .side-tab.active {
+            left: 0;
+        }
+        .side-tab-content {
+            padding: 15px;
+        }
+        .side-tab-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #9b1818;
+        }
+        .side-tab-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .side-tab-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .side-tab-list li a {
+            color: #aa0808;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .side-tab-list li a:hover {
+            color: rgb(180, 29, 29);
+        }
+        .overlay {
+            position: fixed;
+            top: 56px;
+            z-index: 999;
+        }
+
+        #sideTabToggleBtn .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+        
+
+        .bio-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px;
+            font-family: 'Georgia', serif;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 0 15px;
+        }
+        .footer-col h4 {
+            color: #f5f5f5;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            font-size: 0.9rem;
+        }
+        .footer-col ul li a:hover {
+            color: #e74c3c;
+            padding-left: 5px;
+        }
+        .contact-info p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .social-links a {
+            color: #bdc3c7;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .newsletter-form input {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.9rem;
+        }
+        .newsletter-form button {
+            padding: 10px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            text-align: center;
+            grid-column: 1/-1;
+        }
+        .back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #e74c3c;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        .modal-content {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .modal-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .modal-title {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 4px;
+            padding: 10px;
+        }
+      
+      
+        .news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 15px;
+        }
+        .news-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .moment-card {
+                flex: 0 0 calc(50% - 15px);
+                max-width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .moment-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .navbar-nav {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            .cricketer-card {
+                width: 160px;
+                padding: 12px;
+            }
+            .cricketer-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Side Tab -->
+    <div class="side-tab" id="sideTab">
+        <div class="side-tab-content">
+            <h3 class="side-tab-title">BIOGRAPHY</h3>
+            <ul class="side-tab-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="history and culture.html">History and Culture</a></li>
+                <li><a href="scientists.html">Scientists</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler me-2" type="button" id="sideTabToggleBtn">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+               <img src="https://8-www.britishempire.co.uk/images3/biographytit.jpg" alt="Biography Logo" width="200" height="40">
+            </a>
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artists.html">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="history and culture.html">History and Culture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <button class="newsletter-btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                    <i class="fas fa-envelope me-2"></i> Newsletter
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Newsletter Modal -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Subscribe to Our Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title"><span>"Journey</span> Through Time with <span>Iconic</span> Figures"</h1>
+            <p class="hero-subtitle">Discover the life journies of the famous people who revolutionize the world with their unique thoughts and great inventions!</p>
+        </div>
+    </section>
+
+    <!-- News Slider -->
+    <section class="news-slider">
+        <div class="container">
+            <h2 class="section-title">Latest Biography News</h2>
+            <div class="slider-container">
+                <div class="slider" id="newsSlider">
+                    
+                    <div class="slide">
+                        <div class="news-card">
+                            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Biography Award" class="news-img">
+                            <div class="news-content">
+                                <h3>Our Mandela Biography Wins Award</h3>
+                                <p class="date">June 8, 2023</p>
+                                <p>The International Biography Association has awarded our Nelson Mandela biography "Best Historical Work 2023".</p>
+                                <a href="https://en.wikipedia.org/wiki/List_of_awards_and_honours_received_by_Nelson_Mandela" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="news-card">
+                            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80" alt="Interview Announcement" class="news-img">
+                            <div class="news-content">
+                                <h3>Exclusive Interview with Serena Williams</h3>
+                                <p class="date">June 1, 2023</p>
+                                <p>Coming next week: An exclusive interview with tennis legend Serena Williams about her upcoming autobiography.</p>
+                                <a href="https://www.youtube.com/watch?v=98Ra0WtyhEc" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured People -->
+    <section class="featured-people" id="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Legends</h2>
+            <p>Discover the stories of remarkable individuals who changed the course of history</p>
+            <div class="people-grid">
+                <div class="person-card">
+                    <img src="https://th.bing.com/th/id/OIP.N84Qs5aYy1GUXHXdzic-bwHaEK?rs=1&pid=ImgDetMain" alt="Lionel Messi" class="person-img">
+                    <div class="person-info">
+                        <h3>Lionel Messi</h3>
+                        <p>Argentine footballer widely regarded as one of the greatest players of all time</p>
+                        <a href="https://en.wikipedia.org/wiki/Lionel_Messi" class="btn">Read Biography</a>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="https://th.bing.com/th/id/OIP.j4mQTuxfWJl0FjfRuzVoNgHaEc?rs=1&pid=ImgDetMain" alt="Nelson Mandela" class="person-img">
+                    <div class="person-info">
+                        <h3>Nelson Mandela</h3>
+                        <p>South African anti-apartheid revolutionary and political leader</p>
+                        <a href="https://en.wikipedia.org/wiki/Nelson_Mandela" class="btn">Read Biography</a>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="https://th.bing.com/th/id/R.baa0744ee03795ad552628bec1d461a6?rik=DnVjXR5sz44vOA&pid=ImgRaw&r=0" alt="Serena Williams" class="person-img">
+                    <div class="person-info">
+                        <h3>Serena Williams</h3>
+                        <p>American tennis player considered among the greatest athletes of all time</p>
+                        <a href="https://en.wikipedia.org/wiki/Serena_Williams" class="btn">Read Biography</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historic Moments -->
+    <section class="historic-moments">
+        <div class="container">
+            <h2 class="section-title">Top 3 Historic Moments</h2>
+            <div class="moments-container">
+                <div class="moment-card">
+                    <img src="https://www.gannett-cdn.com/presto/2019/07/09/USAT/9933c0ab-5c4a-4283-bf19-debb4aeefb2c-EPA_SPACE_PHOTO_ESSAY_MOON_LANDING_ANNIVERSARY.5.jpg?crop=2479,1394,x1,y230&width=3200&height=1680&fit=bounds" alt="Moon Landing" class="moment-img">
+                    <div class="moment-info">
+                        <h3>First Moon Landing</h3>
+                        <p class="date">July 20, 1969</p>
+                        <p>Neil Armstrong becomes the first human to walk on the moon, uttering the famous words: "That's one small step for man, one giant leap for mankind."</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="moment-card">
+                    <img src="https://th.bing.com/th/id/R.488d282fdc1dad10ab09b185a92c545b?rik=lbcoP13%2fOJiDBw&pid=ImgRaw&r=0" alt="Declaration of Independence" class="moment-img">
+                    <div class="moment-info">
+                        <h3>Declaration of Independence</h3>
+                        <p class="date">July 4, 1776</p>
+                        <p>The Continental Congress adopts the Declaration of Independence, announcing the American colonies' separation from Great Britain.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="moment-card">
+                    <img src="https://th.bing.com/th/id/OIP.IaEUjIYYjlreeuAZ8PIVPQHaE5?rs=1&pid=ImgDetMain" alt="Fall of Berlin Wall" class="moment-img">
+                    <div class="moment-info">
+                        <h3>Fall of the Berlin Wall</h3>
+                        <p class="date">November 9, 1989</p>
+                        <p>The Berlin Wall falls after 28 years, symbolizing the end of the Cold War and paving the way for German reunification.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Cricketers -->
+    <section class="top-cricketers">
+        <div class="container">
+            <h2 class="section-title">Top 5 Cricketers of All Time</h2>
+            <div class="cricketers-list">
+                <div class="cricketer-card">
+                    <div class="cricketer-rank">1</div>
+                    <a href="https://en.wikipedia.org/wiki/Don_Bradman"><img src="https://th.bing.com/th/id/OIP.Ep_lsRfQiC3jQsOe-taMuwHaGL?rs=1&pid=ImgDetMain" alt="Don Bradman" class="cricketer-img"></a> 
+                    <h3>Don Bradman</h3>
+                    <p>Australia</p>
+                    <p>Test Average: 99.94</p>
+                </div>
+                <div class="cricketer-card">
+                    <div class="cricketer-rank">2</div>
+                   <a href="https://en.wikipedia.org/wiki/Sachin_Tendulkar"> <img src="https://th.bing.com/th/id/OIP.976cx4Pmt2fu5k4E9i4nmgHaEo?rs=1&pid=ImgDetMain" alt="Sachin Tendulkar" class="cricketer-img"></a>
+                    <h3>Sachin Tendulkar</h3>
+                    <p>India</p>
+                    <p>100 Int'l Centuries</p>
+                </div>
+                <div class="cricketer-card">
+                    <div class="cricketer-rank">3</div>
+                    <a href="https://en.wikipedia.org/wiki/Garfield_Sobers"> <img src="https://th.bing.com/th/id/OIP.RBSRR0oI6Hf0Ua7jS4D3WwHaGz?w=2200&h=2020&rs=1&pid=ImgDetMain" alt="Garry Sobers" class="cricketer-img"></a>
+                    <h3>Garry Sobers</h3>
+                    <p>West Indies</p>
+                    <p>True All-Rounder</p>
+                </div>
+                <div class="cricketer-card">
+                    <div class="cricketer-rank">4</div>
+                    <a href="https://en.wikipedia.org/wiki/Shane_Warne"> <img src="https://www.nme.com/wp-content/uploads/2023/06/shane-warne-getty.jpg" alt="Shane Warne" class="cricketer-img"></a>
+                    <h3>Shane Warne</h3>
+                    <p>Australia</p>
+                    <p>708 Test Wickets</p>
+                </div>
+                <div class="cricketer-card">
+                    <div class="cricketer-rank">5</div>
+                   <a href="https://en.wikipedia.org/wiki/Viv_Richards"><img src="https://th.bing.com/th/id/R.2697f4cf0e840e15a8575950e02b78e1?rik=%2b%2bmgFapvK9jUPg&pid=ImgRaw&r=0" alt="Viv Richards" class="cricketer-img"></a> 
+                    <h3>Viv Richards</h3>
+                    <p>West Indies</p>
+                    <p>Master Blaster</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bio-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="history.html">Historical Figures</a></li>
+                    <li><a href="scientists.html">Scientists</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="bibliography.html">Bibliography</a></li>
+                    <li><a href="museum-partners.html">Museum Partners</a></li>
+                    <li><a href="research-papers.html">Research Papers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@biographydomain.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+            <p class="copyright">© 2023 Biography Archives. All rights reserved.</p>
+        </div>
+        <a href="#" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Side tab functionality
+            const toggleBtn = document.getElementById('sideTabToggleBtn');
+            const sideTab = document.getElementById('sideTab');
+            const overlay = document.getElementById('overlay');
+            
+            toggleBtn.addEventListener('click', function() {
+                sideTab.classList.toggle('active');
+                overlay.style.display = sideTab.classList.contains('active') ? 'block' : 'none';
+                document.body.classList.toggle('side-tab-open');
+            });
+            
+            overlay.addEventListener('click', function() {
+                sideTab.classList.remove('active');
+                overlay.style.display = 'none';
+                document.body.classList.remove('side-tab-open');
+            });
+            
+            const sideTabLinks = document.querySelectorAll('.side-tab-list a');
+            sideTabLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    sideTab.classList.remove('active');
+                    overlay.style.display = 'none';
+                    document.body.classList.remove('side-tab-open');
+                });
+            });
+
+            // Newsletter form submission
+            const newsletterForms = document.querySelectorAll('form');
+            newsletterForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    
+                    if (emailInput && emailInput.value) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        this.reset();
+                        const modal = bootstrap.Modal.getInstance(this.closest('.modal'));
+                        if (modal) modal.hide();
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            });
+
+            // Simple slider functionality
+            const slider = document.querySelector('#newsSlider');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slider.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    showSlide(parseInt(this.dataset.slide));
+                });
+            });
+            
+            // Auto-advance slides
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                showSlide(currentSlide);
+            }, 5000);
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

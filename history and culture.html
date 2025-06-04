@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOGRAPHY</title>
+
+      <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+
+        body{
+            padding-top: 50px;
+        }
+        /* Custom styles for centering nav links */
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Adds spacing between links */
+            font-size: large;
+        }
+
+        .navbar-brand img {
+            height: 40px; /* Adjust logo height */
+        }
+        .newsletter-btn {
+            background-color: #e7a0a0;
+            color: #264d49;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .newsletter-btn:hover {
+            background-color: white;
+            color: rgb(180, 29, 29);
+        }
+        /* Ensures navbar items stay in one line */
+        .navbar {
+            white-space: nowrap;
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
+             background-color: #aa6262;
+            
+        }
+
+        .nav-link{
+            color: white;
+        }
+
+        .nav-link:hover{
+            color: aqua;
+        }
+
+        .container{
+            border:1px solid rgb(129, 9, 9);
+            width: 700px;
+            height: 400px;
+        }
+
+        span{
+            color:rgb(187, 9, 9);
+        }
+
+        .lead{
+            font-family:initial;
+            padding-left: 10px;
+            letter-spacing: 1px;
+        }
+
+        .lead:hover{
+            color:rgb(180, 29, 29);
+            cursor: pointer;
+        }
+        img{
+            border: 2px solid transparent;
+           
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+    
+        h3{
+            color: brown;
+        }
+
+       .card img{
+        height: 250px;
+        width: 240px;
+      } 
+
+      .image-text-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Ensures nothing spills out of the container*/ 
+} 
+
+.full-width-image {
+  width: 100%;
+}
+
+.full-width-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+        /* Side Tab Styles */
+.side-tab {
+    background-color: white;
+    height: 100vh;
+    width: 280px;
+    position: fixed;
+    left: -280px;
+    top: 56px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(214, 201, 201, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+
+.side-tab.active {
+    left: 0;
+}
+
+.side-tab-content {
+    padding: 20px;
+}
+
+.side-tab-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #9b1818;
+}
+
+.side-tab-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.side-tab-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.side-tab-list li a {
+    color: #aa0808;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.side-tab-list li a:hover {
+    color: rgb(180, 29, 29);
+}
+
+/* Overlay when side tab is open */
+.overlay {
+    position: fixed;
+    top: 56px;
+    z-index: 999;
+    
+}
+
+/* Adjust main content when side tab is open */
+body.side-tab-open {
+    overflow: hidden;
+}
+
+#sideTabToggleBtn .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+        
+
+.box{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    font-weight: 80px;
+    margin:20px;
+    text-transform: capitalize;
+    text-align: inherit;
+    text-decoration:underline;
+}
+
+
+/* Footer Base Styles */
+.bio-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0 30px;
+    position: relative;
+    font-family: 'Georgia', serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Footer Columns */
+.footer-col h4 {
+    color: #f5f5f5;
+    margin-bottom: 25px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #e74c3c;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: #e74c3c;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #bdc3c7;
+}
+
+.newsletter-form button {
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    background: #e74c3c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .back-to-top {
+        right: 20px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+      
+</style>
+
+</head>
+<body>
+
+      <!-- Side Tab -->
+<div class="side-tab" id="sideTab">
+    <div class="side-tab-content ">
+        <h3 class="side-tab-title">BIOGRAPHY</h3>
+        <ul class="side-tab-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="history and culture.html">History and Culture</a></li>
+           
+            <li><a href="scientists.html">Scientists</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Overlay (for closing when clicking outside) -->
+<div class="overlay" id="overlay"></div>
+
+
+     <!-- navbar -->
+    <nav class="navbar navbar-light fixed-top">
+        <div class="container-fluid">
+
+          <!-- Toggle Button (added before the logo) -->
+<button class="navbar-toggler me-2" type="button" id="sideTabToggleBtn">
+    <span class="navbar-toggler-icon"></span>
+</button>
+            <!-- Logo-->
+            <a class="navbar-brand" href="#">
+               <img src="https://8-www.britishempire.co.uk/images3/biographytit.jpg" alt="Biography Logo" width="200px" height="100px">
+            </a>
+            </a>
+
+            <!-- nav links-->
+            <ul class="navbar-nav flex-row"> <!-- flex-row keeps items horizontal -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artists.html">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="history and culture.html">History and Culture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+            </ul>
+
+            <!-- Newsletter button -->
+            <div class="d-flex">
+                <button class="newsletter-btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                    <i class="fas fa-envelope me-2"></i> Newsletter
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Newsletter Modal (Popup) -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Subscribe to Our Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5 rounded-pill">
+        <div class="row align-items-center">
+            
+                <h1 class="text-center mt-5 mb-4 text-muted" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Hatshepsut (c. 1507–1458 BCE)</h1>
+                <div class="col-md-4 img-content mx-auto m-0 ">
+                <img src="https://mymodernmet.com/wp/wp-content/uploads/2022/06/hatshepsut-statue-1.jpg" alt="Hatshepsut" width="250px" class="img-fluid mx-auto rounded-circle">
+            </div>
+            <div class="col-md-7 text-content justify-content-center">
+              <a  href="https://www.britannica.com/biography/Hatshepsut"><p class="lead">First female ruler of ancient Egypt to reign as a male with the full authority of pharaoh. Her name means <span>"Foremost of Noble Women "</span> or <span>"She is First Among Noble Women"</span></p></a>
+            </div>
+        </div>
+    </div>
+
+<div class="container mt-5 rounded-2">
+    <div class="row "> 
+        
+        <!-- Text Column (Left) -->
+        <div class="col-md-6 d-flex align-items-center p-4">
+            <div>
+                <h3 class="text-center mb-4">Ashoka the Great (304–232 BCE)</h3>
+                <a href="https://www.britannica.com/biography/Ashoka"> <p class="lead">Ashoka, also known as Asoka or Aśoka, and popularly known as Ashoka the Great, was Emperor of Magadha and the third ruler from the Mauryan dynasty.</p></a>
+            </div>
+        </div>
+
+        <!-- Image Column (Right) -->
+        <div class="col-md-6 d-flex p-0 container-fluid"> <!-- Removed padding -->
+            <div class="w-100 h-100">
+                <img src="https://th.bing.com/th/id/R.0bce79f1f1c353b01fd1c3405ad52dea?rik=%2fsCWTvJkJ0336g&pid=ImgRaw&r=0" alt="Ashoka the Great" width="350px" height="400px" 
+                     style="object-fit: cover; object-position: center;">
+            </div>
+        </div>
+    </div>
+</div><br>
+  
+
+    <div class="container-fluid mt-5">
+        <hr><h1 class="display-4  font-awesome text-danger" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">SOME HISTORIC FIGURES:</h1><hr>
+        <div class="row row-cols-md-4 p-5">
+            <div class="col">
+                <div class="card col-md-10">
+                 <a href="https://www.biography.com/artists/leonardo-da-vinci"> <img src="https://th.bing.com/th/id/OIP.N0vYE_jNb7ZwPry1bJDovwHaJP?cb=iwp2&rs=1&pid=ImgDetMain" alt="leonardo da vinci" > </a>
+                    <div class="card-body">
+                        <h4>LEONARDO DA VINCI</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card col-md-10 ">
+                  <a href="https://www.thefamouspeople.com/profiles/mansa-musa-33307.php"> <img src="https://th.bing.com/th/id/OIP.bTSHHAYn7ks6Rs5OsBd0JQHaEo?cb=iwp2&rs=1&pid=ImgDetMain" alt="mansu musa"></a> 
+                    <div class="card-body">
+                        <h4> MANSU <br> MUSA</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-md-4 p-5 ">
+            <div class="col">
+                <div class="card col-md-10">
+                    <a href="https://www.thefamouspeople.com/profiles/gilgamesh-36875.php" ><img src="https://miro.medium.com/v2/resize:fit:934/1*H52r5rrxIWs9TYtWFFC-fw.png" alt="gilgamesh" ></a> 
+                    <div class="card-body">
+                        <h4>GILGAMESH</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card col-md-10 ">
+                   <a href="https://www.britannica.com/topic/King-Arthur"><img src="https://th.bing.com/th/id/OIP.7U4iWs90IFm5ZCdKmzfEyQHaHa?cb=iwp2&rs=1&pid=ImgDetMain" alt="king arthur">
+                </a> 
+                    <div class="card-body">
+                        <h4> KING ARTHUR</h4>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </div>
+
+
+    <h1 class="text-center">Pope Benedict XVI’s Legacy</h1>
+    <div class="container col-md-10 border border-light">
+    <div class="image-text-container">
+  <div class="full-width-image text-center">
+    <img src="https://hips.hearstapps.com/hmg-prod/images/pope-benedict-resignation-gettyimages-162839480.jpg?crop=1xw:0.8888888888888888xh;center,top&resize=1200:*" alt="Pope Benedict">
+  </div>
+  <div class="text-content text-center fw-light">
+    <p>"The pontiff cited advanced age as the reason behind his shocking move in February 2013, though his decision may have been aided by the difficulties of bringing the Church into the 21st century."</p>
+  </div>
+</div>
+</div>
+<hr>
+<div class= "display-4  font-awesome text-center text-danger" style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">
+    EUROPEAN EXPLORERS</div><hr>
+   
+    <h2 class="text-center">Leif Eriksson</h2>
+        <p class="col-md-5 mx-auto text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Norse explorer Leif Eriksson is credited with being the first European to reach North America.</p>
+        <div class="text-center">
+        <img src="https://th.bing.com/th/id/OIP.ux6Rv1PDY1ldbAWP-iK0jQHaEp?w=1024&h=642&rs=1&pid=ImgDetMain" alt="Leif Eriksson" width="400px"class="border border-info">
+    </div>
+    <p class="col-5 mx-auto text-start my-3">Born in the 10th century, Norse explorer Leif Eriksson was the second son of Erik the Red, who is credited with settling Greenland. For his part, Eriksson is considered by many to be the first European to reach North America, centuries ahead of Christopher Columbus. However, the details of his voyage are a matter of historical debate, with one version claiming his landing accidental and another that he had sailed there intentionally after learning of the region from earlier explorers. In either case, Eriksson eventually returned to Greenland, where he had been commissioned by Norwegian king Olaf I Tryggvason to spread Christianity and is believed to have died circa 1020. In the early 1960s, the discovery of the ruins of a Viking settlement in Newfoundland lent further weight to accounts of Eriksson’s voyage, and in 1964 the United States Congress authorized the president to proclaim each October 9 as Leif Eriksson Day.</p>
+
+<footer class="bio-footer">
+    <div class="footer-container">
+        <!-- Column 1: Quick Links -->
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="history.html">Historical Figures</a></li>
+                <li><a href="scientists.html">Scientists</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Resources -->
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="bibliography.html">Bibliography</a></li>
+                <li><a href="museum-partners.html">Museum Partners</a></li>
+                <li><a href="research-papers.html">Research Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> contact@biographydomain.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p class="copyright">© 2023 Biography Archives. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</footer>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('sideTabToggleBtn');
+    const sideTab = document.getElementById('sideTab');
+    const overlay = document.getElementById('overlay');
+    
+    // Toggle side tab
+    toggleBtn.addEventListener('click', function() {
+        sideTab.classList.toggle('active');
+        overlay.style.display = sideTab.classList.contains('active') ? 'block' : 'none';
+        document.body.classList.toggle('side-tab-open');
+    });
+    
+    // Close side tab when clicking overlay
+    overlay.addEventListener('click', function() {
+        sideTab.classList.remove('active');
+        overlay.style.display = 'none';
+        document.body.classList.remove('side-tab-open');
+    });
+    
+    // Close side tab when clicking a link (optional)
+    const sideTabLinks = document.querySelectorAll('.side-tab-list a');
+    sideTabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            sideTab.classList.remove('active');
+            overlay.style.display = 'none';
+            document.body.classList.remove('side-tab-open');
+        });
+    });
+
+    // Newsletter form submission with alert
+    const newsletterForms = document.querySelectorAll('form'); // Get all forms on the page
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Find the email input within this form
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            if (emailInput && emailInput.value) {
+                // Show success message
+                alert('Thank you for subscribing to our newsletter!');
+                
+                // Reset the form
+                this.reset();
+                
+                // Close the modal if this is the modal form
+                if (this.closest('.modal')) {
+                    const modal = bootstrap.Modal.getInstance(this.closest('.modal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                }
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    });
+});
+</script>
+
+      <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

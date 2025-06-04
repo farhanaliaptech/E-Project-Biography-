@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOGRAPHY</title>
+
+      <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+  body{
+            padding-top: 50px;
+        }
+        /* Custom styles for centering nav links */
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Adds spacing between links */
+            
+        }
+        .navbar-brand img {
+            height: 40px; /* Adjust logo height */
+        }
+        .newsletter-btn {
+           background-color: #e7a0a0;
+            color: #264d49;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+    
+        }
+        .newsletter-btn:hover {
+            background-color: white;
+            color: rgb(180, 29, 29);
+        }
+        /* Ensures navbar items stay in one line */
+        .navbar {
+             background-color: #aa6262;
+        }
+
+        .nav-link{
+            color: white;
+        }
+
+        .nav-link:hover{
+            color: aqua;
+        }
+
+        /* .container{
+            border:1px solid rgb(129, 9, 9);
+            width: 700px;
+            height: 400px;
+        } */
+
+        /* span{
+            color:rgb(187, 9, 9);
+        } */
+
+        /* .lead{
+            font-family:initial;
+            padding-left: 10px;
+            letter-spacing: 1px;
+        } */
+
+        .lead:hover{
+            color:rgb(180, 29, 29);
+            cursor: pointer;
+        }
+        
+        /* img{
+            border: 2px solid transparent;
+           
+        } */
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+    
+        h3{
+            color: brown;
+        } 
+
+      /* .card img{
+        height: 250px;
+        width: 240px;
+      } 
+
+      .image-text-container {
+  position: relative;
+  width: 100%;
+   overflow: hidden; /* Ensures nothing spills out of the container
+} */
+
+
+.full-width-image {
+  width: 100%;
+} 
+
+.full-width-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+        /* Side Tab Styles */
+.side-tab {
+    background-color: white;
+    height: 100vh;
+    width: 280px;
+    position: fixed;
+    left: -280px;
+    /* top: 56px; */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(214, 201, 201, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+
+.side-tab.active {
+    left: 0;
+}
+
+.side-tab-content {
+    padding: 20px;
+}
+
+.side-tab-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #9b1818;
+}
+
+.side-tab-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.side-tab-list li {
+    padding: 10px 0;
+    
+}
+
+.side-tab-list li a {
+    color: #aa0808;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.side-tab-list li a:hover {
+    color: rgb(180, 29, 29);
+}
+
+/* Overlay when side tab is open */
+.overlay {
+    position: fixed;
+    top: 56px;
+    z-index: 999;
+}
+
+/* Adjust main content when side tab is open */
+body.side-tab-open {
+    overflow: hidden;
+}
+
+#sideTabToggleBtn .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+        
+
+.gallary{
+    width: 100%;
+    padding: 70px 0;
+}
+
+.gallary .gallary_image_box{
+    width: 95%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.gallary .gallary_image_box .gallary_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.gallary .gallary_image_box .gallary_image img{
+    width: 100%;
+}
+
+.gallary .gallary_image_box .gallary_image:hover img{
+    opacity: 0.4;
+}
+
+.gallary .gallary_image_box .gallary_image h3{
+    position: absolute;
+    font-size: 35px;
+    margin-bottom: 130px;
+    color: #ebd806;
+    font-family: polo;
+    /* z-index: 5; */
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover h3{
+    opacity: 1;
+}
+
+.gallary .gallary_image_box .gallary_image .gallary_btn{
+    position: absolute;
+    margin-top: 180px;
+    color: #000;
+    background: #b31a2c;
+    padding: 7px 25px;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(45px); 
+    transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover .gallary_btn{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box{
+    color:#0e5191;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: xxx-large;
+}
+
+/* Footer Base Styles */
+.bio-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0 30px;
+    position: relative;
+    font-family: 'Georgia', serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Footer Columns */
+.footer-col h4 {
+    color: #f5f5f5;
+    margin-bottom: 25px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #e74c3c;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: #e74c3c;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #bdc3c7;
+}
+
+.newsletter-form button {
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    background: #e74c3c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .back-to-top {
+        right: 20px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+      <!-- Side Tab -->
+<div class="side-tab" id="sideTab">
+    <div class="side-tab-content ">
+        <h3 class="side-tab-title">BIOGRAPHY</h3>
+        <ul class="side-tab-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="history and culture.html">History and Culture</a></li>
+            <li><a href="scientists.html">Scientists</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Overlay (for closing when clicking outside) -->
+<div class="overlay" id="overlay"></div>
+
+
+     <!-- navbar -->
+    <nav class="navbar navbar-light  fixed-top">
+        <div class="container-fluid">
+
+          <!-- Toggle Button (added before the logo) -->
+<button class="navbar-toggler me-2" type="button" id="sideTabToggleBtn">
+    <span class="navbar-toggler-icon"></span>
+</button>
+            <!-- Logo-->
+            <a class="navbar-brand" href="#">
+               <img src="https://8-www.britishempire.co.uk/images3/biographytit.jpg" alt="Biography Logo" width="200px" height="100px">
+            </a>
+            </a>
+
+            <!-- nav links-->
+            <ul class="navbar-nav flex-row"> <!-- flex-row keeps items horizontal -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artists.html">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="history and culture.html">History and Culture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+            </ul>
+
+            <!-- Newsletter button -->
+            <div class="d-flex">
+                <button class="newsletter-btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                    <i class="fas fa-envelope me-2"></i> Newsletter
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Newsletter Modal (Popup) -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Subscribe to Our Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" box mt-3 text-center  "> FAMOUS PAINTERS</div>
+
+<div class="col-md-9 justify-content-center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif " >
+            <h3 class="mt-5 text-center" style="text-decoration: underline;">"SOME WELL-KNOWN VISUAL ARTISTS AND PAINTERS WHO PRESENTED THE INCREDIBLE PAINTINGS AT THEIR TIME."</h3>
+        </div>
+
+<div class="mt-5 text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: xx-large;">Influential Painters</div>
+
+<div class=" mt-5 rounded-2">
+    <div class="row "> 
+        
+        <!-- Text Column (Left) -->
+        <div class="col-md-7 d-flex align-items-center p-4 bg-light">
+            <div>
+                <h3 class="text-center mb-4 " style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Raphael</h3>
+                <a href="https://www.biography.com/artists/raphael"><p class="lead">A leading figure of Italian High Renaissance classicism, Raphael is best known for his "Madonnas," including the Sistine Madonna, and for his large figure compositions in the Palace of the Vatican in Rome.</p></a>
+            </div>
+        </div>
+
+        <!-- Image Column (Right) -->
+        <div class="col-md-5 d-flex p-0 container-fluid bg-light "> <!-- Removed padding -->
+            <div class="w-100 h-100 ">
+                <img src="https://www.datocms-assets.com/103094/1689107054-1583402351459421-autoritratto.jpg?auto=format%2Ccompress" alt="raphael" width="350px" height="400px" 
+                     style="object-fit: cover; object-position: center;" class="rounded-pill ">
+            </div>
+        </div>
+    </div>
+</div><br>
+
+<h2 class="text-center mt-5" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: xlarger ; color: #741616;">Vincent Van Gogh</h2>
+        <p class="col-md-5 mx-auto text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Vincent van Gogh was one of the world’s greatest artists, with paintings such as ‘Starry Night’ and ‘Sunflowers,’ though he was unknown until after his death.</p>
+        <div class="text-center">
+        <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/vincent-van-gogh-artist-john-springfield.jpg" alt="vincent" width="400px" height="450px" class="border border-info">
+    </div>
+    <p class="col-5 mx-auto text-start my-3">Vincent van Gogh was a post-Impressionist painter whose work — notable for its beauty, emotion and color — highly influenced 20th-century art. He struggled with mental illness and remained poor and virtually unknown throughout his life.
+    Van Gogh was born on March 30, 1853, in Groot-Zundert, Netherlands. Van Gogh’s father, Theodorus van Gogh, was an austere country minister, and his mother, Anna Cornelia Carbentus, was a moody artist whose love of nature, drawing and watercolors was transferred to her son.Van Gogh was born exactly one year after his parents' first son, also named Vincent, was stillborn. At a young age — with his name and birthdate already etched on his dead brother's headstone — van Gogh was melancholy.</p>
+<hr>
+
+ <div class="text-center mt-5" style="font-family:Verdana, Geneva, Tahoma, sans-serif;  font-size: xx-large;font-weight: bold; background-color: #000;color: aliceblue;">SOME WELL-KNOWN ARTISTS</div>
+
+    <div class="gallary" id="Gallary">
+    <div class="gallary_image_box bg-dark">
+        <div class="gallary_image">
+            <img src="https://3.bp.blogspot.com/-_Kdj4WHMgJs/T-x55RBodaI/AAAAAAAACT0/q6NMyeSeQ7A/s1600/01+Bob-Ross.jpg" height="320px">
+
+            <h3>Bob Ross</h3>
+            <a href="https://www.biography.com/artists/bob-ross" class="gallary_btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="gallary_image">
+            <img src="https://i.pinimg.com/originals/70/30/3a/70303a27832d131a42447f79fd9d208a.jpg" width="50px" height="320px"><br>
+
+            <h3>Frida Kahlo</h3>
+            <a href="https://www.britannica.com/biography/Frida-Kahlo" class="gallary_btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="gallary_image">
+            <img src="https://th.bing.com/th/id/OIP._T1J6Go6E5ePvwgMrwxuWAHaJ4?rs=1&pid=ImgDetMain" width="50" height="320px"><br>
+
+            <h3>Edouard Manet</h3>
+            <a href="https://www.britannica.com/biography/Edouard-Manet" class="gallary_btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="gallary_image">
+            <img src="https://i.pinimg.com/736x/5f/18/56/5f1856ba14aaaa3ca94d764dc3f1a251.jpg" width="50" height="320px"><br>
+
+            <h3>Margaret Keane</h3>
+            <a href="https://www.biography.com/artist/margaret-keane" class="gallary_btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="gallary_image">
+            <img src="https://th.bing.com/th/id/OIP.uHRGQlE15VsjaSpVMhPpbQAAAA?rs=1&pid=ImgDetMain" width="60" height="320px"><br>
+
+            <h3>Claude Monet</h3>
+            <a href="https://www.britannica.com/biography/Claude-Monet" class="gallary_btn">EXPLORE MORE</a>
+        </div>
+
+        <div class="gallary_image">
+            <img src="https://th.bing.com/th/id/OIP.-v3liJHKLwhoMHfiOkPM_QHaFj?rs=1&pid=ImgDetMain" width="110" height="320px"><br>
+
+            <h3>Rembrandt van Rijn </h3>
+            <a href="https://www.britannica.com/biography/Rembrandt-van-Rijn" class="gallary_btn">EXPLORE MORE</a>
+        </div>
+    </div>
+</div>
+
+
+<footer class="bio-footer">
+    <div class="footer-container">
+        <!-- Column 1: Quick Links -->
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="history.html">Historical Figures</a></li>
+                <li><a href="scientists.html">Scientists</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Resources -->
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="bibliography.html">Bibliography</a></li>
+                <li><a href="museum-partners.html">Museum Partners</a></li>
+                <li><a href="research-papers.html">Research Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> contact@biographydomain.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p class="copyright">© 2023 Biography Archives. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</footer>
+   
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('sideTabToggleBtn');
+    const sideTab = document.getElementById('sideTab');
+    const overlay = document.getElementById('overlay');
+    
+    // Toggle side tab
+    toggleBtn.addEventListener('click', function() {
+        sideTab.classList.toggle('active');
+        overlay.style.display = sideTab.classList.contains('active') ? 'block' : 'none';
+        document.body.classList.toggle('side-tab-open');
+    });
+    
+    // Close side tab when clicking overlay
+    overlay.addEventListener('click', function() {
+        sideTab.classList.remove('active');
+        overlay.style.display = 'none';
+        document.body.classList.remove('side-tab-open');
+    });
+    
+    // Close side tab when clicking a link (optional)
+    const sideTabLinks = document.querySelectorAll('.side-tab-list a');
+    sideTabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            sideTab.classList.remove('active');
+            overlay.style.display = 'none';
+            document.body.classList.remove('side-tab-open');
+        });
+    });
+
+    // Newsletter form submission with alert
+    const newsletterForms = document.querySelectorAll('form'); // Get all forms on the page
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Find the email input within this form
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            if (emailInput && emailInput.value) {
+                // Show success message
+                alert('Thank you for subscribing to our newsletter!');
+                
+                // Reset the form
+                this.reset();
+                
+                // Close the modal if this is the modal form
+                if (this.closest('.modal')) {
+                    const modal = bootstrap.Modal.getInstance(this.closest('.modal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                }
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    });
+});
+</script>
+
+      <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
+

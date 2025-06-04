@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <style>
+
+     
+        body{
+            padding-top: 70px;
+            margin-top: 20px;
+        }
+        /* Custom styles for centering nav links */
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Adds spacing between links */
+            font-size: large;
+        }
+        .navbar-brand img {
+            height: 40px; /* Adjust logo height */
+        }
+        .newsletter-btn {
+             background-color: #e7a0a0;
+            color: #264d49;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .newsletter-btn:hover {
+            background-color: white;
+            color: rgb(180, 29, 29);
+        }
+        /* Ensures navbar items stay in one line */
+        .navbar {
+            white-space: nowrap;
+            overflow-x: auto; /* Allows horizontal scrolling if needed */
+             background-color: #aa6262;
+        }
+
+        .nav-link{
+            color: white;
+        }
+
+        .nav-link:hover{
+            color: aqua;
+        }
+
+        .container{
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        span{
+            color:rgb(187, 9, 9);
+        }
+
+        .lead{
+            font-family:initial;
+            padding-left: 10px;
+            letter-spacing: 1px;
+        }
+
+        .lead:hover{
+            color:rgb(180, 29, 29);
+            cursor: pointer;
+        }
+        img{
+            border: 2px solid transparent;
+           
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+    
+        h3{
+            color: brown;
+        }
+
+.full-width-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+        /* Side Tab Styles */
+.side-tab {
+    background-color: white;
+    height: 100vh;
+    width: 280px;
+    position: fixed;
+    left: -280px;
+    top: 56px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(214, 201, 201, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+
+.side-tab.active {
+    left: 0;
+}
+
+.side-tab-content {
+    padding: 20px;
+}
+
+.side-tab-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #9b1818;
+}
+
+.side-tab-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.side-tab-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.side-tab-list li a {
+    color: #aa0808;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.side-tab-list li a:hover {
+    color: rgb(180, 29, 29);
+}
+
+/* Overlay when side tab is open */
+.overlay {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(77, 82, 79, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* Adjust main content when side tab is open */
+body.side-tab-open {
+    overflow: hidden;
+}
+
+#sideTabToggleBtn .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+        
+
+/* Footer Base Styles */
+.bio-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0 30px;
+    margin-top: auto;
+    position: relative;
+    font-family: 'Georgia', serif;
+    width: 100vw;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Footer Columns */
+.footer-col h4 {
+    color: #f5f5f5;
+    margin-bottom: 25px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #e74c3c;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: #e74c3c;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #bdc3c7;
+}
+
+.newsletter-form button {
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    background: #e74c3c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .back-to-top {
+        right: 20px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+        .container-box{
+            border: 2px solid gray;
+            border-radius: 90px;
+            width: 500px;
+            height: 500px;
+        }
+    
+    /* Footer Base Styles */
+.bio-footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 60px 0 30px;
+    position: relative;
+    font-family: 'Georgia', serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Footer Columns */
+.footer-col h4 {
+    color: #f5f5f5;
+    margin-bottom: 25px;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #e74c3c;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    color: #e74c3c;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.newsletter-form input::placeholder {
+    color: #bdc3c7;
+}
+
+.newsletter-form button {
+    padding: 12px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #c0392b;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    right: 30px;
+    top: -20px;
+    background: #e74c3c;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .back-to-top {
+        right: 20px;
+        top: -15px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+  
+    p{
+      font-family: 'Times New Roman', Times, serif;
+    }
+  
+   .centre{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 2px solid rgb(112, 112, 182);
+
+    }
+  </style>
+</head>
+<body>
+ <!-- Side Tab -->
+<div class="side-tab" id="sideTab">
+    <div class="side-tab-content ">
+        <h3 class="side-tab-title">BIOGRAPHY</h3>
+        <ul class="side-tab-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="history and culture.html">History and Culture</a></li>
+            <li><a href="scientists.html">Scientists</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Overlay (for closing when clicking outside) -->
+<div class="overlay" id="overlay"></div>
+
+
+     <!-- navbar -->
+    <nav class="navbar navbar-light fixed-top">
+        <div class="container-fluid">
+
+          <!-- Toggle Button (added before the logo) -->
+<button class="navbar-toggler me-2" type="button" id="sideTabToggleBtn">
+    <span class="navbar-toggler-icon"></span>
+</button>
+            <!-- Logo-->
+            <a class="navbar-brand" href="#">
+               <img src="https://8-www.britishempire.co.uk/images3/biographytit.jpg" alt="Biography Logo" width="200px" height="100px">
+            </a>
+            </a>
+
+            <!-- nav links-->
+            <ul class="navbar-nav flex-row"> <!-- flex-row keeps items horizontal -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artists.html">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="history and culture.html">History and Culture</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scientists.html">Scientists</a>
+                </li>
+            </ul>
+
+            <!-- Newsletter button -->
+            <div class="d-flex">
+                <button class="newsletter-btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                    <i class="fas fa-envelope me-2"></i> Newsletter
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Newsletter Modal (Popup) -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Subscribe to Our Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container">
+  <h1 class="mb-4 text-center text-dark">MORE ABOUT ISAAC NEWTON</h1>
+ <h4 style="font-family:Georgia, 'Times New Roman', Times, serif ">EARLY LIFE</h4><br>
+ <p style="font-family:'Times New Roman', Times, serif ;">
+    Born:	4 January 1643 [O.S. 25 December 1642]
+    Woolsthorpe-by-Colsterworth, Lincolnshire, England <br>
+    Died:	31 March 1727 (aged 84) [O.S. 20 March 1726]
+    Kensington, Middlesex, England<br>
+    Resting place:	Westminster Abbey</p><br>
+</div>
+
+<div class="container">
+  <h1 class="mb-4 text-center text-primary" >ACHIEVEMENTS</h1>
+  <ul class="list-group list-group-numbered">
+    <li class="list-group-item" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #aa0808;">Development of Calculus</li><br>
+    <p>Newton was the original developer of calculus, an advanced branch of mathematics that deals mostly with rates of change and with problems such as determining areas or volumes within curved lines or surfaces. Another mathematician, Gottfried Wilhelm Leibniz of Germany, who was a contemporary of Newton, independently developed the idea of calculus. It is now well established that Newton developed calculus before Leibniz seriously pursued mathematics. However, it was Leibniz’s paper in 1684 that first made calculus a matter of public knowledge. Calculus is now the basic entry point for anyone wishing to study physics, chemistry, biology, economics, or finance.</p>
+    <li class="list-group-item" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: #aa0808;">OPTICS</li><br>
+    <p>In 1666, Newton observed that the spectrum of colours exiting a prism in the position of minimum deviation is oblong, even when the light ray entering the prism is circular, which is to say, the prism refracts different colours by different angles.[72][73] This led him to conclude that colour is a property intrinsic to light – a point which had, until then, been a matter of debate.From 1670 to 1672, Newton lectured on optics.[74] During this period he investigated the refraction of light, demonstrating that the multicoloured image produced by a prism, which he named a spectrum, could be recomposed into white light by a lens and a second prism.[75] Modern scholarship has revealed that Newton's analysis and resynthesis of white light owes a debt to corpuscular alchemy.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmuu64tIjYPdIgVxjLBAJ73yLcNEG5i3oVCA&s" alt="prism" width="300px" height="200px" class="centre">
+    <li class="list-group-item" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: #aa0808;">GRAVITY</li><br>
+    <p>ewton had been developing his theory of gravitation as far back as 1665.[103] In 1679, he returned to his work on celestial mechanics by considering gravitation and its effect on the orbits of planets with reference to Kepler's laws of planetary motion. Newton's reawakening interest in astronomical matters received further stimulus by the appearance of a comet in the winter of 1680–1681, on which he corresponded with John Flamsteed.[104] After the exchanges with Hooke, Newton worked out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector. He shared his results with Edmond Halley and the Royal Society in De motu corporum in gyrum, a tract written on about nine sheets which was copied into the Royal Society's Register Book in December 1684.[105] This tract contained the nucleus that Newton developed and expanded to form the Principia.</p>
+    <img src="https://cdn.britannica.com/81/94581-050-531CAC1F/Effects-gravity-Earth-Moon.jpg" alt="prism" width="350px" height="300px" class="mx-auto d-block border border-info" >
+    <li class="list-group-item" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: #aa0808;">OTHER SIGNIFICANT WORK</li><br>
+    <p>Newton studied heat and energy flow, formulating an empirical law of cooling which states that the rate at which an object cools is proportional to the temperature difference between the object and its surrounding environment. It was first formulated in 1701, and is the first heat transfer formulation and serves as the formal basis of convective heat transfer.<br>
+        Newton introduced the notion of a Newtonian fluid with his formulation of his law of viscosity in Principia in 1687. It states that the shear stress between two fluid layers is directly proportional to the velocity gradient between them. He also discussed the circular motion of fluids and was the first to discuss Couette flow<br>
+        Newton was the first to observe and explain the Magnus effect in 1672 after observing tennis players at Cambridge college.</p><br>
+        <h1 class="mb-4 text-center text-danger">DEATH</h1>
+        <p>Newton died in his sleep in London on 20 March 1727 (NS 31 March 1727). He was given a ceremonial funeral, attended by nobles, scientists, and philosophers, and was buried in Westminster Abbey among kings and queens. He was the first scientist to be buried in the abbey.Voltaire may have been present at his funeral.[149] A bachelor, he had divested much of his estate to relatives during his last years, and died intestate.[150] His papers went to John Conduitt and Catherine Barton.</p>
+   
+  </ul>
+
+</div>
+
+<footer class="bio-footer">
+    <div class="footer-container">
+        <!-- Column 1: Quick Links -->
+        <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="history.html">Historical Figures</a></li>
+                <li><a href="scientists.html">Scientists</a></li>
+
+            </ul>
+        </div>
+
+        <!-- Column 2: Resources -->
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="bibliography.html">Bibliography</a></li>
+                <li><a href="museum-partners.html">Museum Partners</a></li>
+                <li><a href="research-papers.html">Research Papers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> contact@biographydomain.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p class="copyright">© 2023 Biography Archives. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('sideTabToggleBtn');
+    const sideTab = document.getElementById('sideTab');
+    const overlay = document.getElementById('overlay');
+    
+    // Toggle side tab
+    toggleBtn.addEventListener('click', function() {
+        sideTab.classList.toggle('active');
+        overlay.style.display = sideTab.classList.contains('active') ? 'block' : 'none';
+        document.body.classList.toggle('side-tab-open');
+    });
+    
+    // Close side tab when clicking overlay
+    overlay.addEventListener('click', function() {
+        sideTab.classList.remove('active');
+        overlay.style.display = 'none';
+        document.body.classList.remove('side-tab-open');
+    });
+    
+    // Close side tab when clicking a link (optional)
+    const sideTabLinks = document.querySelectorAll('.side-tab-list a');
+    sideTabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            sideTab.classList.remove('active');
+            overlay.style.display = 'none';
+            document.body.classList.remove('side-tab-open');
+        });
+    });
+
+    // Newsletter form submission with alert
+    const newsletterForms = document.querySelectorAll('form'); // Get all forms on the page
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Find the email input within this form
+            const emailInput = this.querySelector('input[type="email"]');
+            
+            if (emailInput && emailInput.value) {
+                // Show success message
+                alert('Thank you for subscribing to our newsletter!');
+                
+                // Reset the form
+                this.reset();
+                
+                // Close the modal if this is the modal form
+                if (this.closest('.modal')) {
+                    const modal = bootstrap.Modal.getInstance(this.closest('.modal'));
+                    if (modal) {
+                        modal.hide();
+                    }
+                }
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
